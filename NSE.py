@@ -14,7 +14,7 @@ import pandas as pd
 
 driver = webdriver.Chrome("C:\webdrivers\chromedriver.exe")
 driver.get('https://www.rich.co.ke/rcdata/nsestocks.php')
-driver.maximize_window
+#driver.maximize_window
 #driver.close()
 
 
