@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
+# In[1]:
 
 
 from selenium import webdriver
@@ -9,16 +9,16 @@ from selenium.webdriver.common.by import By
 import pandas as pd
 
 
-# In[ ]:
+# In[2]:
 
 
-driver = webdriver.Chrome("C:\webdrivers\chromedriver.exe")
+driver = webdriver.Chrome()
 driver.get('https://www.rich.co.ke/rcdata/nsestocks.php')
-#driver.maximize_window
+driver.maximize_window
 #driver.close()
 
 
-# In[ ]:
+# In[3]:
 
 
 stocks = driver.find_elements(By.XPATH, '//tr/td/a')[11:75]
@@ -37,7 +37,7 @@ for stocks in stocks:
 """
 
 
-# In[ ]:
+# In[4]:
 
 
 print(len(stocks))
@@ -46,7 +46,7 @@ print(len(now))
 print(len(prev))
 
 
-# In[ ]:
+# In[5]:
 
 
 # To loop over all lists and get text elements:
@@ -67,7 +67,7 @@ for i in range(len(volume)):
     stock_result.append(temporary_data)
 
 
-# In[ ]:
+# In[6]:
 
 
 
@@ -75,14 +75,20 @@ df = pd.DataFrame(stock_result)
 df
 
 
-# In[ ]:
+# In[7]:
 
 
 df.to_excel('nse_share_prices.xlsx', index=False)
 
 
-# In[ ]:
+# In[8]:
 
 
 driver.close()
+
+
+# In[ ]:
+
+
+
 
