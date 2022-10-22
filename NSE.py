@@ -1,11 +1,4 @@
-#!/usr/bin/env python
-# coding: utf-8
 
-# In[4]:
-
-
-# %load "C:\Users\Kingori\Downloads\NSE2.py"
-#!/usr/bin/env python
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -50,18 +43,12 @@ def get_price_table():
     import datetime
     def _getToday():
             return datetime.date.today().strftime("%Y%m%d")
-    outpath = r"D:\OneDrive\Documents\SQL\PostgreSQL\Python\Projects\NSE_Data"
     filename = "%s_%s%s" % ("nse_share_prices", _getToday() ,".xlsx")
-    filename_1 = outpath + "\\" + filename
-    filename_1
 
     # To create the duplicate of
     # an already existing file
 
     import os
-    D = r"D:\OneDrive\Documents\SQL\PostgreSQL\Python\Projects\NSE_Data"
-
-    # importing the shutil module
     import shutil
 
 
@@ -72,7 +59,8 @@ def get_price_table():
     src = r"D:\OneDrive\Documents\SQL\PostgreSQL\Python\Projects\NSE_Data\nse_share_prices.xlsx"
 
     # dest contains the path of the destination file
-    dest = filename_1
+    outpath = r"D:\OneDrive\Documents\SQL\PostgreSQL\Python\Projects\NSE_Data"
+    dest = outpath + "\\" + filename
 
     # create duplicate of the file at the destination,
     # with the name mentioned
