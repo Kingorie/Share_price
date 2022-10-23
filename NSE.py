@@ -1,7 +1,10 @@
+
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import schedule
 import pandas as pd
+import time
 
 def get_price_table():
     
@@ -92,7 +95,16 @@ def get_price_table():
     print("After copying file:")
     print(os.listdir(D))
 
-    df = pd.DataFrame(stock_result)
-    print(df)
-
 get_price_table()
+
+schedule.every(3).hours.do(get_price_table)
+
+while True:
+ 
+    # Checks whether a scheduled task
+    # is pending to run or not
+    schedule.run_pending()
+    time.sleep(0)
+
+
+
