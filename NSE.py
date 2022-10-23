@@ -1,6 +1,3 @@
-# %load "C:\Users\Kingori\Downloads\NSE2.py"
-#!/usr/bin/env python
-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import schedule
