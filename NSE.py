@@ -95,8 +95,6 @@ def get_price_table():
     print("After copying file:")
     print(os.listdir(D))
 
-get_price_table()
-
 schedule.every(3).hours.do(get_price_table)
 
 while True:
