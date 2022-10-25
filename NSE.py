@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[6]:
+# In[2]:
 
 
 # %load "C:\Users\Kingori\Downloads\NSE2.py"
@@ -105,18 +105,17 @@ def get_prices():
 
     import datetime
     def _getToday():
-            return datetime.date.today().strftime("%Y%m%d")
+            return datetime.date.today().strftime("%Y%m%d") #to get current date
     outpath = r"D:\OneDrive\Documents\SQL\PostgreSQL\Python\Projects\NSE_Data"
-    filename = "%s_%s%s" % ("nse_share_prices", _getToday() ,".xlsx")
-    filename_1 = outpath + "\\" + filename
-    filename_1
+    filename = "%s_%s%s" % ("nse_share_prices", _getToday() ,".xlsx") #create a filename (string) with today's date
+    outpath_1 = outpath + "\\" + filename
+    outpath_1
 
 
     # In[10]:
 
 
-    # Python program to create the duplicate of
-    # an already existing file
+    # Create the duplicate of an already existing file
 
     D = r"D:\OneDrive\Documents\SQL\PostgreSQL\Python\Projects\NSE_Data"
 
@@ -127,7 +126,7 @@ def get_prices():
     src = r"D:\OneDrive\Documents\SQL\PostgreSQL\Python\Projects\NSE_Data\nse_share_prices.xlsx"
 
     # dest contains the path of the destination file
-    dest = filename_1
+    dest = outpath_1
 
     # create duplicate of the file at the destination,
     # with the name mentioned
@@ -140,28 +139,13 @@ def get_prices():
     print("After copying file:")
     print(os.listdir(D))
 
-    # print path of the newly created duplicate file
-    print("Path of the duplicate file is:")
-    print(path)
-
-
-    # create duplicate of the file at the destination,
-    # with the name mentioned
-    # at the end of the destination path
-    # if a file with the same name doesn't already
-    # exist at the destination,
-    # a new file with the name mentioned is created
-    path = shutil.copyfile(src, dest)
-
-    print("After copying file:")
-    print(os.listdir(D))
-
-schedule.every(20).seconds.do(get_prices)
+get_prices()
+    
+"""schedule.every(20).seconds.do(get_prices)
 
 while True:
     schedule.run_pending()
-    time.sleep(1)
-    
+    time.sleep(1)"""
 
 
 # In[ ]:
