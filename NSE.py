@@ -1,14 +1,4 @@
-#!/usr/bin/env python
-# coding: utf-8
 
-# In[2]:
-
-
-# %load "C:\Users\Kingori\Downloads\NSE2.py"
-#!/usr/bin/env python
-
-
-# In[1]:
   
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -19,27 +9,16 @@ import pandas as pd
 import time
 
 def get_prices():
- 
-
-
-    # In[2]:
-
 
     driver = webdriver.Chrome()
     driver.get('https://www.rich.co.ke/rcdata/nsestocks.php')
     driver.maximize_window
-    #driver.close()
-
-
-    # In[3]:
-
-
+   
     stocks = driver.find_elements(By.XPATH, '//tr/td/a')[11:75]
     prev = driver.find_elements(By.XPATH, '//tr/td[3]')[2:]
     now = driver.find_elements(By.XPATH, '//tr/td[4]')[1:]
     percentage = driver.find_elements(By.XPATH, '//tr/td[5]')[1:]
     volume = driver.find_elements(By.XPATH, '//tr/td[7]')[1:]
-
 
     """
     # To confirm if code works:
@@ -58,12 +37,7 @@ def get_prices():
     print(len(now))
     print(len(prev))
 
-
-    # In[5]:
-
-
     # To loop over all lists and get text elements:
-
 
     stock_result = []
 
@@ -79,29 +53,12 @@ def get_prices():
 
         stock_result.append(temporary_data)
 
-
-    # In[6]:
-
-
-
     df = pd.DataFrame(stock_result)
     df
 
-
-    # In[7]:
-
-
     df.to_excel('nse_share_prices.xlsx', index=False)
 
-
-    # In[8]:
-
-
     driver.close()
-
-
-    # In[9]:
-
 
     import datetime
     def _getToday():
@@ -111,18 +68,15 @@ def get_prices():
     outpath_1 = outpath + "\\" + filename
     outpath_1
 
-
-    # In[10]:
-
-
+    # Use OS module
     # Create the duplicate of an already existing file
 
     D = r"D:\OneDrive\Documents\SQL\PostgreSQL\Python\Projects\NSE_Data"
 
     print("Before copying file:")
     print(os.listdir(D))
-
-    # src contains the path of the source file
+    
+        # src contains the path of the source file
     src = r"D:\OneDrive\Documents\SQL\PostgreSQL\Python\Projects\NSE_Data\nse_share_prices.xlsx"
 
     # dest contains the path of the destination file
@@ -134,22 +88,17 @@ def get_prices():
     # if a file with the same name doesn't already
     # exist at the destination,
     # a new file with the name mentioned is created
-    path = shutil.copyfile(src, dest)
 
+    shutil.copyfile(src, dest)
+    print("File copied successfully.")
+    
     print("After copying file:")
     print(os.listdir(D))
 
 get_prices()
     
-"""schedule.every(20).seconds.do(get_prices)
+schedule.every(20).seconds.do(get_prices)
 
 while True:
     schedule.run_pending()
-    time.sleep(1)"""
-
-
-# In[ ]:
-
-
-
-
+    time.sleep(1)
