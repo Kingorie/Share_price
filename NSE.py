@@ -6,7 +6,7 @@ import schedule
 import pandas as pd
 import time
 
-def get_price_table():
+def get_prices():
     
     driver = webdriver.Chrome()
     driver.get('https://www.rich.co.ke/rcdata/nsestocks.php')
@@ -95,9 +95,7 @@ def get_price_table():
     print("After copying file:")
     print(os.listdir(D))
 
-get_price_table()
-
-schedule.every(3).hours.do(get_price_table)
+schedule.every(3).hours.do(get_prices)
 
 while True:
  
