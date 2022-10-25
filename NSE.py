@@ -95,7 +95,9 @@ def get_prices():
     print("After copying file:")
     print(os.listdir(D))
 
+
 schedule.every(3).hours.do(get_prices)
+
 
 while True:
  
