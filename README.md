@@ -11,6 +11,7 @@ Using Selenium web driver for chrome, this script launches a headless browser an
 # How it works
 
 1. Download your appropriate chromedriver and save it to this repository
-2. Run "All Cells" on ipynb file. A .csv file is created for this date. Script overwrites previous 
-# Requirements
+2. Run "All Cells" on ipynb file. A .csv file is created for this date. Script overwrites previous file
+
+
 
