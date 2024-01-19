@@ -7,17 +7,18 @@ This Python script uses Selenium to scrape NSE (Nairobi Securities Exchange) sha
 - Schedule: A simple job scheduling library.
 
 # Usage
+
 1. Make sure you have the ChromeDriver installed and available in your system PATH.
 2. Run the script, and it will open the Rich Management NSE page, scrape the relevant data, and save it to an Excel file named nse_share_prices.xlsx.
 3.The Excel file is saved in the specified output path, and its filename includes the current date.
 
 # Code Structure
--Section 1: Imports necessary libraries.
--Section 2: Initializes the Selenium WebDriver and navigates to the target webpage.
--Section 3: Scrapes stock data using XPath queries.
--Section 4: Creates a Pandas DataFrame from the scraped data.
--Section 5: Saves the DataFrame to an Excel file.
--Section 6: Closes the WebDriver.
+- Section 1: Imports necessary libraries.
+- Section 2: Initializes the Selenium WebDriver and navigates to the target webpage.
+- Section 3: Scrapes stock data using XPath queries.
+- Section 4: Creates a Pandas DataFrame from the scraped data.
+- Section 5: Saves the DataFrame to an Excel file.
+- Section 6: Closes the WebDriver.
 
 # Additional Functionality
 
