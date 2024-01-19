@@ -1,3 +1,14 @@
+# Overview
+This Python script uses Selenium to scrape NSE (Nairobi Securities Exchange) share prices from the Rich Management website. The scraped data includes stock names, previous prices, current prices, percentage changes, and trading volumes.
+
+# Dependencies
+- Selenium: A web testing library.
+- Pandas: A data manipulation library.
+- Schedule: A simple job scheduling library.
+
+
+
+
 # Share price Scraper
 
 This is a Python program that gets the current stock prices of shares trading at the Nairobi Stock Exchange (NSE).
